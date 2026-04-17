@@ -3,11 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cannon Ops — AI-Powered Tools &amp; Automation</title>
-  <meta name="description" content="Cannon Ops builds AI-powered tools and automation pipelines for small businesses. Founded by Joel Cannon.">
+  <title>Cannon Ops &mdash; Reliable Infrastructure &amp; Automated Workflows</title>
+  <meta name="description" content="Cannon Ops delivers reliable, scalable infrastructure and automated workflow solutions for small and mid-sized businesses. Custom software tools, AI-powered automation, and digital operations.">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
       --navy: #1a2332;
       --slate: #2d3a4a;
@@ -16,8 +15,9 @@
       --light: #f1f5f9;
       --white: #ffffff;
       --gray: #64748b;
+      --dark-gray: #475569;
     }
-
+    html { scroll-behavior: smooth; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
       color: var(--navy);
@@ -33,28 +33,24 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
-
     .logo {
       font-size: 1.5rem;
       font-weight: 700;
       letter-spacing: -0.02em;
     }
-
-    .logo span {
-      color: var(--accent);
-    }
-
+    .logo span { color: var(--accent); }
     header nav a {
       color: var(--light);
       text-decoration: none;
       margin-left: 2rem;
       font-size: 0.95rem;
+      transition: color 0.2s;
     }
-
-    header nav a:hover {
-      color: var(--accent);
-    }
+    header nav a:hover { color: var(--accent); }
 
     /* Hero */
     .hero {
@@ -63,37 +59,35 @@
       text-align: center;
       padding: 6rem 2rem;
     }
-
     .hero h1 {
       font-size: 2.75rem;
       font-weight: 700;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
       letter-spacing: -0.03em;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
     }
-
     .hero p {
-      font-size: 1.25rem;
+      font-size: 1.15rem;
       color: var(--light);
-      max-width: 600px;
-      margin: 0 auto 2rem;
-      opacity: 0.9;
+      max-width: 720px;
+      margin: 0 auto 2.5rem;
+      opacity: 0.92;
+      line-height: 1.7;
     }
-
     .hero .cta {
       display: inline-block;
       background: var(--accent);
       color: var(--white);
-      padding: 0.8rem 2rem;
+      padding: 0.85rem 2.2rem;
       border-radius: 6px;
       text-decoration: none;
       font-weight: 600;
       font-size: 1.05rem;
       transition: background 0.2s;
     }
-
-    .hero .cta:hover {
-      background: var(--accent-hover);
-    }
+    .hero .cta:hover { background: var(--accent-hover); }
 
     /* About */
     .about {
@@ -102,17 +96,16 @@
       padding: 5rem 2rem;
       text-align: center;
     }
-
     .about h2 {
       font-size: 2rem;
-      margin-bottom: 1rem;
+      margin-bottom: 1.25rem;
     }
-
     .about p {
-      font-size: 1.1rem;
-      color: var(--gray);
-      max-width: 640px;
+      font-size: 1.05rem;
+      color: var(--dark-gray);
+      max-width: 700px;
       margin: 0 auto;
+      line-height: 1.75;
     }
 
     /* Services */
@@ -120,96 +113,95 @@
       background: var(--light);
       padding: 5rem 2rem;
     }
-
     .services h2 {
       text-align: center;
       font-size: 2rem;
       margin-bottom: 3rem;
     }
-
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem;
-      max-width: 900px;
+      max-width: 960px;
       margin: 0 auto;
     }
-
     .service-card {
       background: var(--white);
       padding: 2rem;
       border-radius: 8px;
       box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+      border-top: 3px solid var(--accent);
     }
-
     .service-card h3 {
       font-size: 1.2rem;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.75rem;
       color: var(--navy);
     }
-
     .service-card p {
-      color: var(--gray);
+      color: var(--dark-gray);
       font-size: 0.95rem;
+      line-height: 1.65;
     }
 
-    /* Projects */
-    .projects {
+    /* Recent Work */
+    .recent-work {
       max-width: 800px;
       margin: 0 auto;
-      padding: 5rem 2rem;
+      padding: 4rem 2rem;
       text-align: center;
     }
-
-    .projects h2 {
-      font-size: 2rem;
+    .recent-work h2 {
+      font-size: 1.5rem;
       margin-bottom: 1rem;
+      color: var(--slate);
     }
-
-    .projects p {
+    .recent-work p {
       color: var(--gray);
-      margin-bottom: 2rem;
+      font-size: 0.95rem;
+      max-width: 600px;
+      margin: 0 auto 1.5rem;
+      line-height: 1.65;
     }
-
     .project-link {
       display: inline-block;
       border: 2px solid var(--accent);
       color: var(--accent);
-      padding: 0.7rem 1.8rem;
+      padding: 0.6rem 1.5rem;
       border-radius: 6px;
       text-decoration: none;
       font-weight: 600;
+      font-size: 0.9rem;
       transition: all 0.2s;
     }
-
     .project-link:hover {
       background: var(--accent);
       color: var(--white);
     }
 
-    /* Footer */
+    /* Footer / Contact */
     footer {
       background: var(--navy);
       color: var(--light);
       text-align: center;
-      padding: 3rem 2rem;
+      padding: 3.5rem 2rem;
     }
-
-    footer .contact {
+    footer h2 {
+      font-size: 1.75rem;
+      color: var(--white);
       margin-bottom: 1rem;
     }
-
+    footer .contact { margin-bottom: 1rem; }
+    footer .contact p {
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+    }
     footer a {
       color: var(--accent);
       text-decoration: none;
     }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
+    footer a:hover { text-decoration: underline; }
     footer .legal {
-      margin-top: 1.5rem;
+      margin-top: 2rem;
       font-size: 0.85rem;
       opacity: 0.6;
     }
@@ -218,8 +210,12 @@
     @media (max-width: 600px) {
       .hero h1 { font-size: 2rem; }
       .hero { padding: 4rem 1.5rem; }
-      header { flex-direction: column; gap: 0.75rem; }
+      header {
+        flex-direction: column;
+        gap: 0.75rem;
+      }
       header nav a { margin-left: 1rem; }
+      .services-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -236,49 +232,65 @@
   </header>
 
   <section class="hero">
-    <h1>AI-Powered Tools &amp; Automation for Small Businesses</h1>
-    <p>We build intelligent systems that do the ongoing work — so you can focus on what matters.</p>
+    <h1>Infrastructure &amp; Automation That Works as Hard as You Do</h1>
+    <p>Cannon Ops delivers reliable, scalable infrastructure and automated workflow solutions without the overhead. We design custom software tools, AI-powered automation pipelines, and digital operations tailored to your business workflows.</p>
     <a href="#contact" class="cta">Get in Touch</a>
   </section>
 
   <section class="about" id="about">
     <h2>About Cannon Ops</h2>
-    <p>Cannon Ops is a solo consultancy founded by Joel Cannon, a retired systems engineer with decades of experience building reliable infrastructure. We specialize in AI-powered automation pipelines, digital operations, and custom software tools designed for small businesses that need enterprise-grade solutions without enterprise-grade overhead.</p>
+    <p>Founded by Joel Cannon, a seasoned systems engineer with decades of hands-on experience designing, building, and optimizing reliable, scalable infrastructure for complex operational environments. Joel&rsquo;s expertise in automation strategies and digital operations enables small and mid-sized businesses to implement high-performance solutions that deliver enterprise-level reliability and efficiency without unnecessary complexity or cost.</p>
   </section>
 
   <section class="services" id="services">
     <h2>What We Build</h2>
     <div class="services-grid">
       <div class="service-card">
-        <h3>AI Automation Pipelines</h3>
-        <p>Document processing, data extraction, and intelligent workflows that turn hours of manual work into minutes.</p>
+        <h3>Custom Software &amp; Automation Pipelines</h3>
+        <p>We build purpose-built tools that eliminate manual bottlenecks &mdash; document processing engines, automated quote generation, approval workflows, and data pipelines that turn hours of repetitive work into reliable, hands-off systems.</p>
       </div>
       <div class="service-card">
-        <h3>Custom Software Tools</h3>
-        <p>Purpose-built web applications and scripts tailored to your specific business processes.</p>
+        <h3>AI-Powered Operations</h3>
+        <p>We integrate large language models and intelligent extraction into your existing processes &mdash; automated proposal drafting, structured data capture from unstructured sources, and AI-assisted decision support that scales with your workload.</p>
       </div>
       <div class="service-card">
-        <h3>Digital Operations</h3>
-        <p>Systems that run themselves — monitoring, reporting, and process automation that works while you sleep.</p>
+        <h3>Digital Infrastructure</h3>
+        <p>We design and deploy web applications, APIs, and systems integrations built for durability &mdash; low-maintenance architectures that run reliably without requiring a full-time IT team to keep the lights on.</p>
       </div>
     </div>
   </section>
 
-  <section class="projects" id="projects">
-    <h2>Current Projects</h2>
-    <p>Far West Legacy is an open-source, AI-assisted tool that extracts genealogical data from obituaries and contributes records to the FamilySearch Family Tree.</p>
-    <a href="https://github.com/cannon-ops/far-west-legacy" class="project-link" target="_blank" rel="noopener">View Far West Legacy on GitHub</a>
+  <section class="recent-work" id="projects">
+    <h2>Recent Work</h2>
+    <p>Far West Legacy is a public demonstration of our AI document-processing capabilities &mdash; an automated pipeline that extracts structured genealogical data from historical obituaries and contributes records to the FamilySearch Family Tree.</p>
+    <a href="https://github.com/cannon-ops/far-west-legacy" class="project-link" target="_blank" rel="noopener">View on GitHub</a>
   </section>
 
   <footer id="contact">
+    <h2>Let&rsquo;s Talk</h2>
     <div class="contact">
       <p><strong>Joel Cannon</strong> &mdash; Founder, Cannon Ops</p>
-      <p>joel [at] cannonops [dot] com</p>
+      <p id="em"></p>
     </div>
     <div class="legal">
-      Cannon Ops is a brand of Cannon Digital LLC &bull; Gallatin, Missouri
+      &copy; 2026 Cannon Ops &bull; A brand of Cannon Digital LLC &bull; Gallatin, Missouri
     </div>
   </footer>
+
+  <script>
+    // Obfuscated email to reduce scraping
+    (function(){
+      var u='joel',d='cannonops.com';
+      var e=u+'@'+d;
+      var el=document.getElementById('em');
+      var a=document.createElement('a');
+      a.href='mailto:'+e;
+      a.textContent=e;
+      a.style.color='#3b82f6';
+      a.style.textDecoration='none';
+      el.appendChild(a);
+    })();
+  </script>
 
 </body>
 </html>
