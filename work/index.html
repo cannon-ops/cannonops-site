@@ -250,7 +250,10 @@
         description: "Open-source AI tool that extracts structured genealogical data from obituaries and contributes records to the FamilySearch Family Tree.",
         outcome: "farwestlegacy.com",
         link: "https://farwestlegacy.com",
-        tag: "Python · Claude API · Flask"
+        tag: "Python · Claude API · Flask",
+        links: [
+          { label: "GitHub", url: "https://github.com/cannon-ops/far-west-legacy" }
+        ]
       },
       {
         name: "WorkFlo",
@@ -296,11 +299,17 @@
               <a href="${pp.after.url}" target="_blank" rel="noopener">${escapeHtml(pp.after.label)}</a>
             </li>`).join('')}</ul>`
         : '';
+      const links = (p.links && p.links.length)
+        ? `<ul class="pairs"><li>${p.links.map(l =>
+            `<a href="${l.url}" target="_blank" rel="noopener">${escapeHtml(l.label)}</a>`
+          ).join(' <span class="sep">|</span> ')}</li></ul>`
+        : '';
       return `
         <article class="work-card">
           <h3>${escapeHtml(p.name)}</h3>
           <p class="description">${escapeHtml(p.description)}</p>
           ${pairs}
+          ${links}
           <div class="meta">
             <span class="outcome">${outcome}</span>
             ${tag}
