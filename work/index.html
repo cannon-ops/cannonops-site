@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Work — Cannon Ops</title>
+  <meta name="description" content="A small selection of projects built by Cannon Digital LLC — AI-powered automation, infrastructure, and digital operations.">
+  <meta name="robots" content="index, follow">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #1a2332;
+      --slate: #2d3a4a;
+      --accent: #3b82f6;
+      --accent-hover: #2563eb;
+      --light: #f1f5f9;
+      --white: #ffffff;
+      --gray: #64748b;
+      --dark-gray: #475569;
+      --border: #e2e8f0;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      color: var(--navy);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    /* Header (matches main site) */
+    header {
+      background: var(--navy);
+      color: var(--white);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .logo a { color: var(--white); text-decoration: none; }
+    .logo span { color: var(--accent); }
+    header nav a {
+      color: var(--light);
+      text-decoration: none;
+      margin-left: 2rem;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+    header nav a:hover { color: var(--accent); }
+
+    /* Page intro */
+    .page-intro {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 4rem 2rem 2rem;
+      text-align: center;
+    }
+    .page-intro h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.02em;
+    }
+    .page-intro p {
+      color: var(--gray);
+      max-width: 640px;
+      margin: 0 auto;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    /* Project grid */
+    .work-grid {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 1rem 2rem 4rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .work-card {
+      background: var(--white);
+      padding: 1.75rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--accent);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .work-card:hover {
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+      transform: translateY(-2px);
+    }
+    .work-card h3 {
+      font-size: 1.15rem;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+    }
+    .work-card .description {
+      color: var(--dark-gray);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+      flex-grow: 1;
+    }
+    .work-card .meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-top: auto;
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--border);
+    }
+    .work-card .outcome {
+      font-size: 0.85rem;
+      color: var(--gray);
+    }
+    .work-card .outcome a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .work-card .outcome a:hover { text-decoration: underline; }
+    .work-card .tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      background: var(--light);
+      color: var(--slate);
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      letter-spacing: 0.02em;
+    }
+    .work-card .status {
+      font-size: 0.85rem;
+      color: var(--gray);
+      font-style: italic;
+    }
+
+    /* Back link */
+    .back-link {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 2rem 4rem;
+      text-align: center;
+    }
+    .back-link a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+    .back-link a:hover { text-decoration: underline; }
+
+    /* Footer */
+    footer {
+      background: var(--navy);
+      color: var(--light);
+      text-align: center;
+      padding: 2.5rem 2rem;
+      font-size: 0.85rem;
+      opacity: 0.95;
+    }
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    footer a:hover { text-decoration: underline; }
+    footer .legal { opacity: 0.7; margin-top: 0.5rem; }
+
+    @media (max-width: 600px) {
+      header { flex-direction: column; gap: 0.75rem; }
+      header nav a { margin-left: 1rem; }
+      .page-intro { padding: 3rem 1.5rem 1.5rem; }
+      .page-intro h1 { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo"><a href="/">Cannon<span>Ops</span></a></div>
+    <nav>
+      <a href="/#about">About</a>
+      <a href="/#services">Services</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="page-intro">
+    <h1>Selected Work</h1>
+    <p>A small selection of projects — public tools, internal automation, and quiet infrastructure work for clients. Not exhaustive; just representative.</p>
+  </section>
+
+  <section class="work-grid" id="workGrid">
+    <!-- Cards rendered from the projects array below -->
+  </section>
+
+  <div class="back-link">
+    <a href="/">&larr; Back to cannonops.com</a>
+  </div>
+
+  <footer>
+    <div>&copy; 2026 Cannon Ops &bull; A brand of Cannon Digital LLC &bull; Gallatin, Missouri</div>
+    <div class="legal"><a href="/#contact">Get in touch</a></div>
+  </footer>
+
+  <script>
+    // ────────────────────────────────────────────────────────────────────────
+    // PROJECTS — to add a new card, append an object to this array.
+    // Required: name, description, outcome.
+    // Optional: link (string URL) — turns outcome into a clickable link.
+    // Optional: tag — short technology label shown in card footer.
+    // ────────────────────────────────────────────────────────────────────────
+    const projects = [
+      {
+        name: "Far West Legacy",
+        description: "Open-source AI tool that extracts structured genealogical data from obituaries and contributes records to the FamilySearch Family Tree.",
+        outcome: "farwestlegacy.com",
+        link: "https://farwestlegacy.com",
+        tag: "Python · Claude API · Flask"
+      },
+      {
+        name: "WorkFlo",
+        description: "AI-assisted quoting automation for industrial equipment — turns hours of manual proposal work into a hands-off pipeline.",
+        outcome: "Internal only",
+        tag: "Document automation · LLM"
+      },
+      {
+        name: "Whitewater Engineering & Power",
+        description: "Migrated an existing small-business website off GoDaddy onto a free-tier static host with no functional regression.",
+        outcome: "$250/yr → $22/yr",
+        tag: "Static site · DNS migration"
+      }
+    ];
+
+    // ────────────────────────────────────────────────────────────────────────
+    // Render — no template engine needed.
+    // ────────────────────────────────────────────────────────────────────────
+    const grid = document.getElementById('workGrid');
+    const html = projects.map(p => {
+      const outcome = p.link
+        ? `<a href="${p.link}" target="_blank" rel="noopener">${escapeHtml(p.outcome)}</a>`
+        : `<span class="status">${escapeHtml(p.outcome)}</span>`;
+      const tag = p.tag ? `<span class="tag">${escapeHtml(p.tag)}</span>` : '';
+      return `
+        <article class="work-card">
+          <h3>${escapeHtml(p.name)}</h3>
+          <p class="description">${escapeHtml(p.description)}</p>
+          <div class="meta">
+            <span class="outcome">${outcome}</span>
+            ${tag}
+          </div>
+        </article>
+      `;
+    }).join('');
+    grid.innerHTML = html;
+
+    function escapeHtml(s) {
+      return String(s).replace(/[&<>"']/g, c => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+      }[c]));
+    }
+  </script>
+
+</body>
+</html>
