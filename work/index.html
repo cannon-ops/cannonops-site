@@ -138,6 +138,32 @@
       border-radius: 4px;
       letter-spacing: 0.02em;
     }
+    .work-card .pairs {
+      margin: 0 0 1rem;
+      padding: 0;
+      list-style: none;
+      font-size: 0.85rem;
+      color: var(--gray);
+      line-height: 1.7;
+    }
+    .work-card .pairs li {
+      display: flex;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+    }
+    .work-card .pairs .pair-label {
+      color: var(--slate);
+      font-weight: 600;
+    }
+    .work-card .pairs a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .work-card .pairs a:hover { text-decoration: underline; }
+    .work-card .pairs .sep {
+      color: var(--border);
+      user-select: none;
+    }
     .work-card .status {
       font-size: 0.85rem;
       color: var(--gray);
@@ -236,7 +262,19 @@
         name: "Whitewater Engineering & Power",
         description: "Migrated an existing small-business website off GoDaddy onto a free-tier static host with no functional regression.",
         outcome: "$250/yr → $22/yr",
-        tag: "Static site · DNS migration"
+        tag: "Static site · DNS migration",
+        linkPairs: [
+          {
+            label: "Engineering",
+            before: { label: "Archive", url: "https://steve-engineering-archive.onrender.com" },
+            after:  { label: "Modern",  url: "https://steve-engineering-modern.onrender.com"  }
+          },
+          {
+            label: "Power",
+            before: { label: "Archive", url: "https://steve-power-archive.onrender.com" },
+            after:  { label: "Modern",  url: "https://steve-power-modern.onrender.com"  }
+          }
+        ]
       }
     ];
 
@@ -249,10 +287,20 @@
         ? `<a href="${p.link}" target="_blank" rel="noopener">${escapeHtml(p.outcome)}</a>`
         : `<span class="status">${escapeHtml(p.outcome)}</span>`;
       const tag = p.tag ? `<span class="tag">${escapeHtml(p.tag)}</span>` : '';
+      const pairs = (p.linkPairs && p.linkPairs.length)
+        ? `<ul class="pairs">${p.linkPairs.map(pp => `
+            <li>
+              <span class="pair-label">${escapeHtml(pp.label)}:</span>
+              <a href="${pp.before.url}" target="_blank" rel="noopener">${escapeHtml(pp.before.label)}</a>
+              <span class="sep">|</span>
+              <a href="${pp.after.url}" target="_blank" rel="noopener">${escapeHtml(pp.after.label)}</a>
+            </li>`).join('')}</ul>`
+        : '';
       return `
         <article class="work-card">
           <h3>${escapeHtml(p.name)}</h3>
           <p class="description">${escapeHtml(p.description)}</p>
+          ${pairs}
           <div class="meta">
             <span class="outcome">${outcome}</span>
             ${tag}
